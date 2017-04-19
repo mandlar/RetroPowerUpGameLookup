@@ -95,7 +95,36 @@ namespace GameLookup.Models
 
         public string GetGameInformation()
         {
-            return "Developer/Publisher | NOV 11, 2001";
+            string information = "";
+
+            if (developers != null)
+            {
+                foreach (int developer in developers)
+                {
+                    information += developer + "/";
+                }
+            }
+
+            if (publishers != null)
+            {
+                foreach (int publisher in publishers)
+                {
+                    information += publisher + "/";
+                }
+            }
+
+            information += " | ";
+
+            if (release_dates != null)
+            {
+                foreach (ReleaseDate releaseDate in release_dates)
+                {
+                    information += releaseDate.human + " ";
+                }
+            }
+
+            return information;
+            //return "Developer/Publisher | NOV 11, 2001";
         }
     }
 
