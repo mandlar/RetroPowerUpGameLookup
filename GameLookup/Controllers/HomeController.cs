@@ -26,6 +26,10 @@ namespace GameLookup.Controllers
                     model.Games = JsonConvert.DeserializeObject<List<Game>>(json.Result);
                 }
             }
+            else
+            {
+                model.Games = new List<Game>();
+            }
 
             return View(model);
         }

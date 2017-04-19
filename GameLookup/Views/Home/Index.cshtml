@@ -23,6 +23,18 @@
                 </div>
             </div>
         </div>
+        @if (Model.Games.Any())
+        {
+            <br/>
+            foreach (var game in Model.Games)
+            {
+                <div class="row">
+                    @game.GetGameName()<br/>
+                    @game.GetGameInformation()<br/>
+                    <br/>
+                </div>
+            }
+        }
     </div>
 }
 

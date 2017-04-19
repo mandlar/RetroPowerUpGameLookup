@@ -87,6 +87,16 @@ namespace GameLookup.Models
         public Cover cover { get; set; }
         public Esrb esrb { get; set; }
         public Pegi pegi { get; set; }
+
+        public string GetGameName()
+        {
+            return name.ToUpper();
+        }
+
+        public string GetGameInformation()
+        {
+            return "Developer/Publisher | NOV 11, 2001";
+        }
     }
 
     public class GameSearch
